@@ -25,10 +25,13 @@ public class Etal<T extends IProduit> implements IEtal{
 	}
 	
 	public void installerVendeur(Gaulois vendeur, T[] produit, int prix){
-		this.produits=produit;
-		this.vendeur=vendeur;
-		this.prix=prix;
+	    this.produits = produit;
+	    this.vendeur = vendeur;
+	    this.prix = prix;
+	    this.nbProduit = produit.length;
+	    this.etalOccupe = true;
 	}
+
 
 	@Override
 	public int contientProduit(String produit, int quantiteSouhaitee) {
@@ -42,6 +45,7 @@ public class Etal<T extends IProduit> implements IEtal{
 		}
 		return quantiteAVendre;
 	}
+
 	
 	
 	@Override

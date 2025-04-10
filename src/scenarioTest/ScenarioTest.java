@@ -64,15 +64,15 @@ public class ScenarioTest {
 		etalSanglier2.installerVendeur(asterix, sangliersAsterix, 10);
 		etalPoisson.installerVendeur(ordralfabetix, poissons, 7);
 
-		marche[0].etatEtal();
-		marche[1].etatEtal();
-		marche[2].etatEtal();
+		System.out.println(marche[0].etatEtal());
+		System.out.println(marche[1].etatEtal());
+		System.out.println(marche[2].etatEtal());
 		
-		acheterProduit(marche, "sanglier", 3);
+		ScenarioTest.acheterProduit(marche, "sanglier", 3);
 		
-		marche[0].etatEtal();
-		marche[1].etatEtal();
-		marche[2].etatEtal();
+		System.out.println(marche[0].etatEtal());
+		System.out.println(marche[1].etatEtal());
+		System.out.println(marche[2].etatEtal());
  		
 	}
 
