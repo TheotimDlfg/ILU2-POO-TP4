@@ -9,7 +9,7 @@ public class Etal<T extends IProduit> implements IEtal{
 	private int quantiteDebutMarche;
 	private int quantite;
 	private boolean etalOccupe = false;
-	private double prix;
+	private int prix;
 	private int nbProduit = 0;
 
 	public boolean isEtalOccupe() {
@@ -49,21 +49,20 @@ public class Etal<T extends IProduit> implements IEtal{
 	
 	
 	@Override
-	public int acheterProduit(int quantiteSouhaite) {
-		int prixPaye = 0;
-		int limite = nbProduit - quantiteSouhaite;
-		if (limite < 0) limite = 0;
+	public int acheterProduit(int quantiteSouhaitee) {
+	    int prixPaye = 0;
+	    int quantiteAchetee = Math.min(nbProduit, quantiteSouhaitee);
 
-		for (int i = nbProduit - 1; i >= limite; i--) {
-		    prixPaye += produits[i].calculerPrix(prix);
-		}
+	    for (int i = 0; i < quantiteAchetee; i++) {
+	        prixPaye += produits[i].calculerPrix(prix);
+	    }
+	    for (int i = 0; i < nbProduit - quantiteAchetee; i++) {
+	        produits[i] = produits[i + quantiteAchetee];
+	    }
 
-		if (nbProduit >= quantiteSouhaite) {
-			nbProduit -= quantiteSouhaite;
-		} else {
-			nbProduit = 0;
-		}
-		return prixPaye;
+	    nbProduit -= quantiteAchetee;
+
+	    return prixPaye;
 	}
 
 	@Override

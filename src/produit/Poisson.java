@@ -11,11 +11,11 @@ public class Poisson extends Produit{
 	
 	@Override
 	public String descriptionProduit() {
-		return "poisson p�ch�s "+ datePeche +".";
+		return "poisson péchés "+ datePeche +".";
 	}
 
 	@Override
-	public double calculerPrix(double prix) {
+	public int calculerPrix(int prix) {
 		return prix;
 	}
 }

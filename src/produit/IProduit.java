@@ -6,6 +6,6 @@ public interface IProduit {
 
 	String descriptionProduit();
 
-	double calculerPrix(double prix);
+	int calculerPrix(int prix);
 
 }

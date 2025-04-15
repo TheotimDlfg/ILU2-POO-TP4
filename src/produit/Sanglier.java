@@ -13,11 +13,11 @@ public class Sanglier extends Produit{
 	
 	@Override
 	public String descriptionProduit() {
-		return nom + " de "+ poids +" chass� par "+ chasseur + ".";
+		return nom + " de "+ poids +" chassé par "+ chasseur.getNom() + ".";
 	}
 
 	@Override
-	public double calculerPrix(double prix) {
-		return (poids * prix) / 1000;
+	public int calculerPrix(int prix) {
+		return (int) Math.round((poids / 1000.0) * prix);
 	}
 }
