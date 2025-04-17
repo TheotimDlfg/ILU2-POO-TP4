@@ -14,8 +14,4 @@ public class Poisson extends Produit{
 		return "poisson péchés "+ datePeche +".";
 	}
 
-	@Override
-	public int calculerPrix(int prix) {
-		return prix;
-	}
 }
